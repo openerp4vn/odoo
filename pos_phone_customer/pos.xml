@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+	<record id="openerp4vn_pos_order_tree_inherit" model="ir.ui.view">
+            <field name="name">openerp4vn.pos.order.tree.inherit</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+            <field name="arch" type="xml">
+            <data>
+            	<xpath expr="//field[@name='partner_id']" position="after">
+            		<field name="phone" invisible="1"/>
+            	</xpath>
+            </data>
+            </field>
+        </record>
+
+        <record id="openerp4vn_pos_order_tree_inherit" model="ir.ui.view">
+            <field name="name">openerp4vn.pos.order.tree.inherit</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+            <field name="arch" type="xml">
+            <data>
+            	<xpath expr="//field[@name='date_order']" position="after">
+            		<field name="phone"/>
+            	</xpath>
+            </data>
+            </field>
+        </record>
+		
+    </data>
+</openerp>
